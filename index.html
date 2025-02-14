@@ -39,16 +39,17 @@
         .image {
             width: 150px;
             height: auto;
-            margin-top: 10px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="question" id="question">Is Kittu your favorite person?</div>
-        <img src="01.HEIC" class="image" id="question-image">
         <button class="btn yes-btn" id="yes">Yes</button>
         <button class="btn no-btn" id="no">No</button>
+        <br>
+        <img src="01.jpg" class="image" id="question-image">
     </div>
     <script>
         const questions = [
@@ -58,8 +59,8 @@
             "Will you...Be my Valentine? ❤️"
         ];
         const images = [
-            "01.HEIC", "02.PNG", "03.jpg", "04.HEIC", "05.jpg", 
-            "06.png", "07.jpg", "08.heic", "09.jpg"
+            "01.jpg", "02.png", "03.jpg", "04.jpg", "05.jpg", 
+            "06.png", "07.jpg", "08.jpg", "09.jpg"
         ];
         let index = 0;
         let yesBtn = document.getElementById('yes');
@@ -79,7 +80,7 @@
                 noBtn.style.fontSize = noSize + 'px';
                 yesBtn.style.fontSize = yesSize + 'px';
             } else {
-                document.body.innerHTML = "<h1>Yay! You're my Valentine! ❤️</h1><br><img src='image9.png' style='width: 200px; height: auto;'>";
+                document.body.innerHTML = "<h1>Yay! You're my Valentine! ❤️</h1><br>";
             }
         });
         
