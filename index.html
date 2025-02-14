@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ek zaroori Sawal</title>
+    <title>Will You Be My Valentine?</title>
     <style>
         body {
             background: url('kittty.jpg') center/cover no-repeat fixed;
@@ -57,6 +57,10 @@
             "Will you spend the rest of your life with me?", "Will you love me forever?",
             "Will you...Be my Valentine? ❤️"
         ];
+        const images = [
+            "01.HEIC", "02.PNG", "03.jpg", "04.HEIC", "05.jpg", 
+            "06.png", "07.jpg", "08.heic", "09.jpg"
+        ];
         let index = 0;
         let yesBtn = document.getElementById('yes');
         let noBtn = document.getElementById('no');
@@ -69,12 +73,13 @@
             if (index < questions.length - 1) {
                 index++;
                 questionText.textContent = questions[index];
+                questionImage.src = images[index];
                 noSize = 20; // Reset no size
                 yesSize = 20; // Reset yes size
                 noBtn.style.fontSize = noSize + 'px';
                 yesBtn.style.fontSize = yesSize + 'px';
             } else {
-                document.body.innerHTML = "<h1>Yay! You're my Valentine! ❤️</h1><br>";
+                document.body.innerHTML = "<h1>Yay! You're my Valentine! ❤️</h1><br><img src='image9.png' style='width: 200px; height: auto;'>";
             }
         });
         
