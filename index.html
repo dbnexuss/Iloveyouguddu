@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            background: url('your-photo.jpg') center/cover no-repeat fixed;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: pink;
+        }
+        .container {
+            margin-top: 20vh;
+        }
+        .question {
+            font-size: 24px;
+            color: red;
+            font-weight: bold;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .yes-btn {
+            background-color: #ff69b4;
+            color: white;
+        }
+        .no-btn {
+            background-color: #ffcccb;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="question" id="question">Will you be my Valentine?</div>
+        <button class="btn yes-btn" id="yes">Yes</button>
+        <button class="btn no-btn" id="no">No</button>
+    </div>
+    <script>
+        const questions = [
+            "Do you love me?", "Am I your favorite person?", "Do you like surprises?",
+            "Do you think I'm cute?", "Will you go on a date with me?", "Will you be my Valentine?"
+        ];
+        let index = 0;
+        let yesBtn = document.getElementById('yes');
+        let noBtn = document.getElementById('no');
+        let questionText = document.getElementById('question');
+        let noSize = 20;
+        let yesSize = 20;
+        
+        yesBtn.addEventListener('click', () => {
+            if (index < questions.length - 1) {
+                index++;
+                questionText.textContent = questions[index];
+                noSize = 20; // Reset no size
+                yesSize = 20; // Reset yes size
+                noBtn.style.fontSize = noSize + 'px';
+                yesBtn.style.fontSize = yesSize + 'px';
+            } else {
+                document.body.innerHTML = "<h1>Yay! You're my Valentine! ❤️</h1>";
+            }
+        });
+        
+        noBtn.addEventListener('click', () => {
+            noSize -= 2;
+            yesSize += 5;
+            noBtn.style.fontSize = noSize + 'px';
+            yesBtn.style.fontSize = yesSize + 'px';
+            if (noSize <= 5) {
+                noBtn.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
+
