@@ -36,11 +36,17 @@
             background-color: #ffcccb;
             color: black;
         }
+        .image {
+            width: 150px;
+            height: auto;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="question" id="question">Is Kittu your favorite person?</div>
+        <img src="your-photo.jpg" class="image" id="question-image">
         <button class="btn yes-btn" id="yes">Yes</button>
         <button class="btn no-btn" id="no">No</button>
     </div>
@@ -55,6 +61,7 @@
         let yesBtn = document.getElementById('yes');
         let noBtn = document.getElementById('no');
         let questionText = document.getElementById('question');
+        let questionImage = document.getElementById('question-image');
         let noSize = 20;
         let yesSize = 20;
         
@@ -67,7 +74,7 @@
                 noBtn.style.fontSize = noSize + 'px';
                 yesBtn.style.fontSize = yesSize + 'px';
             } else {
-                document.body.innerHTML = "<h1>Yay! You're my Valentine! ❤️</h1>";
+                document.body.innerHTML = "<h1>Yay! You're my Valentine! ❤️</h1><br><img src='your-photo.jpg' style='width: 200px; height: auto;'>";
             }
         });
         
